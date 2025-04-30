@@ -8,9 +8,7 @@ body {
   color: #fff;
   font-family: 'IBM Plex Mono', monospace;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   opacity: 0;
   animation: fade-in 1s ease forwards;
 }
@@ -18,8 +16,11 @@ body {
 .search-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
+  height: 100vh;
+  gap: 20px;
 }
 
 .search-wrapper h1 {
@@ -58,7 +59,8 @@ body {
 
 .spy-wrapper h1 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .spy-wrapper .spy-image {
@@ -168,4 +170,66 @@ body.error .spy-image {
   to {
     opacity: 0;
   }
+}
+
+
+.typed-text::after {
+  content: '|';
+  animation: blink 1s step-start infinite;
+  margin-left: 4px;
+}
+
+
+.lock-sequence {
+  width: 400px;
+  max-width: 80vw;
+  height: auto;
+  margin-bottom: 0px;
+  margin-top: -60px;
+}
+
+.typed-text {
+  font-size: 3em;
+}
+
+.scf-logo {
+  height: 3em;
+  display: none;
+}
+
+
+.scf-logo-final {
+  display: none;
+  height: 30em;
+  transition: opacity 1s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+body.error .lock-sequence {
+  animation: shake 0.3s ease both;
+}
+
+.menu-right {
+  position: absolute;
+  top: 50%;
+  right: 80px;
+  transform: translateY(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.menu-right a {
+  color: white;
+  font-size: 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.menu-right a:hover {
+  color: lime;
 }
